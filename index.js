@@ -1,13 +1,13 @@
 // server.js
 
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const Product = require('./models/ProductModel')
-const User = require('./models/UserModel')
-const productRoute = require('./routes/ProductRoute')
-const userRoute = require('./routes/UserRoute');
-const shopRoute = require('./routes/ShopRoutes');
+// const Product = require('./models/ProductModel')
+// const User = require('./models/UserModel')
+// const productRoute = require('./routes/ProductRoute')
+// const userRoute = require('./routes/UserRoute');
+// const shopRoute = require('./routes/ShopRoutes');
 
 
 const cors = require('cors');
@@ -29,27 +29,27 @@ app.use('/api/product', productRoute)
 app.use('/api/user', userRoute)
 app.use('/api/shop',shopRoute)
 
-mongoose.set("strictQuery",false)
+// mongoose.set("strictQuery",false)
 
-// // Connect to MongoDB
-// mongoose.connect('mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('Connected to MongoDB'))
-//   .catch(err => console.error('Failed to connect to MongoDB', err));
+// // // Connect to MongoDB
+// // mongoose.connect('mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+// //   .then(() => console.log('Connected to MongoDB'))
+// //   .catch(err => console.error('Failed to connect to MongoDB', err));
 
-  //connect to mongo database
-const Connect = () =>{
-    try {
-        const conn = mongoose.connect('mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority');
-        if(conn){
-            console.log("Connection to MongoDB is Successful");
+//   //connect to mongo database
+// const Connect = () =>{
+//     try {
+//         const conn = mongoose.connect('mongodb+srv://Collo:Collo77@cluster0.bo6bwv7.mongodb.net/test?retryWrites=true&w=majority');
+//         if(conn){
+//             console.log("Connection to MongoDB is Successful");
             
-        }
-    } catch (error) {
-        console.log(error)
+//         }
+//     } catch (error) {
+//         console.log(error)
         
-    }
-}
-Connect()
+//     }
+// }
+// Connect()
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
