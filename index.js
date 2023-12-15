@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.get('/',(req,res)=>{
+app.get('/api/',(req,res)=>{
   res.send('Opasso server initiated')
 })
 
